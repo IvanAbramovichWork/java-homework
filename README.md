@@ -1,5 +1,5 @@
-Версия Java: openjdk-21
-Maven : 3.9.5
+Версия Java: openjdk-21 \
+Maven : 3.9.5 \
 Зависимости:
 ```xml
 <dependencies>
@@ -16,4 +16,16 @@ Maven : 3.9.5
       <scope>test</scope>
     </dependency>
   </dependencies>
+```
+## Build:
+```shell
+cd TzShift
+mvn clean compile assembly:single
+cp target/TzShift-1.0-SNAPSHOT-jar-with-dependencies.jar tz.jar
+```
+
+## Test:
+```shell
+cp src/test/resources/test_input.txt .
+java -cp tz.jar  org/example/Main -f -p sample- test_input.txt
 ```
